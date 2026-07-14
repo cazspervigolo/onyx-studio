@@ -55,14 +55,19 @@
 
     function start() { if (!raf && !reduce) frame(); }
     function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+    // Resizing resets canvas.width, which clears it. Animated fields repaint on
+    // the next rAF; a reduced-motion (static) field must be repainted by hand,
+    // or it goes blank after a resize.
+    function paintStatic() { frame(); stop(); }
 
     size();
-    if (reduce) { frame(); stop(); }   // paint one static frame, then hold
+    if (reduce) paintStatic();   // one static frame, then hold
     else start();
 
     var rt;
     window.addEventListener("resize", function () {
-      clearTimeout(rt); rt = setTimeout(function () { size(); }, 200);
+      clearTimeout(rt);
+      rt = setTimeout(function () { size(); if (reduce) paintStatic(); }, 200);
     }, { passive: true });
 
     document.addEventListener("visibilitychange", function () {

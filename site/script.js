@@ -62,14 +62,25 @@
   });
 
   // --- Nav shadow + mobile book bar on scroll ---
+  // The sticky bar hides while the booking card is on screen, so it never
+  // covers or duplicates the real "Book a chair" CTA.
   var nav = document.querySelector(".nav");
   var bookBar = document.querySelector(".mobile-book-bar");
+  var ctaOnScreen = false;
   function onScroll() {
     nav.classList.toggle("is-scrolled", window.scrollY > 40);
-    if (bookBar) bookBar.classList.toggle("is-shown", window.scrollY > 520);
+    if (bookBar) bookBar.classList.toggle("is-shown", window.scrollY > 520 && !ctaOnScreen);
   }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  var finale = document.querySelector(".finale");
+  if (finale && bookBar) {
+    new IntersectionObserver(function (entries) {
+      ctaOnScreen = entries[0].isIntersecting;
+      onScroll();
+    }).observe(finale);
+  }
 
   // --- Mobile menu ---
   var menuBtn = document.querySelector(".menu-toggle");
