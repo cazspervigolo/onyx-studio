@@ -9,6 +9,7 @@
 
   // --- Text bindings ---
   var text = {
+    phone: SITE.phone,
     email: SITE.email,
     addressLine1: SITE.addressLine1,
     addressLine2: SITE.addressLine2,
@@ -26,6 +27,7 @@
 
   // --- Link bindings ---
   var hrefs = {
+    phone: "tel:" + SITE.phoneHref,
     email: "mailto:" + SITE.email,
     booking: booking,
     maps: SITE.mapsUrl,

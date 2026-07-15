@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Inter Variable — SIL Open Font License. Legal stand-in for Google Sans Flex. -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,6 +27,7 @@
     "name": "Onyx Studio",
     "description": "Precision barbering in Melbourne CBD.",
     "url": "https://onyxstudio.melbourne/",
+    "telephone": "+61 3 9602 4625",
     "email": "onyxstudio.melbourne@gmail.com",
     "image": "images/hero-chair.webp",
     "priceRange": "$$",
@@ -76,6 +77,7 @@
     <a href="#team">The team</a>
     <a href="#gallery">The studio</a>
     <a href="#visit">Visit &amp; hours</a>
+    <a data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
     <a class="mobile-menu-book" data-bind-href="booking" href="#visit">Book a chair</a>
   </nav>
 
@@ -124,7 +126,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c6 1 12-3 18-11"/><path d="M3 17l2 3"/></svg>
     </span>
     <div class="statement-inner">
-      <h2 id="statement-text">Two chairs, no rush, and a cut considered down to the last line.</h2>
+      <h2 id="statement-text">Three chairs, no rush, and a cut considered down to the last line.</h2>
     </div>
   </section>
 
@@ -268,6 +270,7 @@
         </address>
         <div class="visit-actions">
           <a class="btn btn-primary" data-bind-href="maps" href="#" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-tint" data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
           <a class="btn btn-tint" data-bind-href="instagram" href="#" target="_blank" rel="noopener" data-bind="instagramHandle">@onyxstudio.melb</a>
         </div>
         <p class="visit-note">Look for the Level 1 entrance on Little Bourke Street, in the heart of the CBD between Elizabeth and Queen.</p>
@@ -286,10 +289,10 @@
       <div class="finale-inner reveal">
         <span class="eyebrow" style="color:var(--tile-muted)">Booking</span>
         <h2>Ready when you are.</h2>
-        <p>Pick your barber, service and time on Fresha. Takes about a minute, or email the studio for anything else.</p>
+        <p>Pick your barber, service and time on Fresha. Takes about a minute. Prefer to talk it through? Give the studio a call.</p>
         <div class="finale-actions">
           <a class="btn btn-invert" data-bind-href="booking" href="#">Book a chair</a>
-          <a class="btn btn-invert-tint" data-bind-href="email" href="#" data-bind="email">onyxstudio.melbourne@gmail.com</a>
+          <a class="btn btn-invert-tint" data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
         </div>
       </div>
     </div>
@@ -319,6 +322,7 @@
           <h4>Find us</h4>
           <span data-bind="addressLine1">Level 1, 377 Little Bourke Street</span>
           <span data-bind="addressLine2">Melbourne VIC 3000</span>
+          <a data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
           <a data-bind-href="email" href="#" data-bind="email">onyxstudio.melbourne@gmail.com</a>
         </div>
       </div>
@@ -331,8 +335,8 @@
     Book a chair<span class="bar-proof" aria-hidden="true">★ <span data-bind="rating">5.0</span> · <span data-bind="reviewCount">1,320+</span> reviews</span>
   </a>
 
-  <script src="config.js?v=14"></script>
-  <script src="particles.js?v=14"></script>
-  <script src="script.js?v=14"></script>
+  <script src="config.js?v=15"></script>
+  <script src="particles.js?v=15"></script>
+  <script src="script.js?v=15"></script>
 </body>
 </html>

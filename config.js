@@ -19,7 +19,8 @@ const SITE = {
   reviewSource: "Fresha",
 
   // --- Contact ------------------------------------------------------------
-  // The studio takes bookings online — no public phone line.
+  phone: "(03) 9602 4625",        // shown on the site
+  phoneHref: "+61396024625",      // dial format — no spaces, +61 and drop the 0
   email: "onyxstudio.melbourne@gmail.com",
 
   // --- Location -----------------------------------------------------------
