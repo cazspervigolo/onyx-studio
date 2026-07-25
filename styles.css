@@ -27,7 +27,7 @@
 
 :root {
   /* --- Surfaces: the room ------------------------------------------------ */
-  --concrete:      #ffffff;   /* the page — one white, no warm tint */
+  --concrete:      #f4f4f2;   /* the floor and the walls */
   --concrete-warm: #f7f7f5;   /* a band, one step down */
   --leather:       #0e0f11;   /* the chairs */
 
@@ -39,7 +39,7 @@
      #8a8d95 only reaches 3.02:1 and fails them all. */
   --ink-faint:     #6b6e74;   /* 4.64:1 — captions, roles, footer labels */
   --ink-dim:       #6f7278;   /* 4.38:1 — unlit statement words (large type) */
-  --on-dark:       #ffffff;
+  --on-dark:       #f4f4f2;
   --on-dark-muted: #9ea3ab;
 
   /* --- The two colour events --------------------------------------------- */
@@ -50,7 +50,7 @@
   /* --- Fills -------------------------------------------------------------- */
   --tint:        rgba(18, 19, 23, 0.055);
   --tint-strong: rgba(18, 19, 23, 0.10);
-  --tint-invert: rgba(255, 255, 255, 0.11);
+  --tint-invert: rgba(244, 244, 242, 0.11);
   --hairline:    rgba(18, 19, 23, 0.10);
 
   /* --- Type --------------------------------------------------------------- */
@@ -200,7 +200,7 @@ section[id], main[id] { scroll-margin-top: 88px; }
 .btn-invert:hover { background: #fff; }
 
 .btn-invert-tint { background: var(--tint-invert); color: var(--on-dark); }
-.btn-invert-tint:hover { background: rgba(255, 255, 255, 0.18); }
+.btn-invert-tint:hover { background: rgba(244, 244, 242, 0.18); }
 
 /* ==========================================================================
    Header
@@ -214,13 +214,13 @@ section[id], main[id] { scroll-margin-top: 88px; }
   align-items: center;
   gap: clamp(0.75rem, 2vw, 2rem);
   padding: 0.7rem var(--pad);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(244, 244, 242, 0.72);
   backdrop-filter: saturate(150%) blur(14px);
   -webkit-backdrop-filter: saturate(150%) blur(14px);
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 .nav.is-scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(244, 244, 242, 0.9);
   box-shadow: 0 1px 0 var(--hairline);
 }
 
@@ -305,7 +305,7 @@ html.motion .status.is-open .status-dot { animation: pulse 2.6s ease-in-out infi
   z-index: 99;
   flex-direction: column;
   padding: 0.5rem var(--pad) 1.25rem;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(244, 244, 242, 0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 12px 24px rgba(18, 19, 23, 0.06);
