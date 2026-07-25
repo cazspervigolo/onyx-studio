@@ -328,15 +328,8 @@
     window.addEventListener("beforeprint", showAll);
   }
 
-  /* The studio rail is a real horizontal scroller only when motion is off.
-     With the film running it is driven by page scroll and `overflow: visible`,
-     so a focusable container would take a tab stop and then do nothing with
-     the arrow keys. Drop the tab stop in that mode; page scrolling already
-     moves the rail, so keyboard users still reach every photo. */
-  var rail = document.querySelector("[data-rail]");
-  if (rail && document.documentElement.classList.contains("motion")) {
-    rail.removeAttribute("tabindex");
-  }
+  /* The studio gallery is now a CSS grid — no horizontal scroll, no pinning,
+     so there's no tabindex to manage. (Kept as a no-op for reference.) */
 
   // The aura on the dark tiles follows the pointer.
   $("[data-tilt]").forEach(function (tile) {

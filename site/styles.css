@@ -724,28 +724,28 @@ html.motion .g4 { animation-duration: 16s; animation-delay: -2s; }
    6 · The studio — pinned horizontal travel
    ========================================================================== */
 
-.studio { position: relative; z-index: 2; }
-.studio-track { padding: 0 0 var(--band); }
-.studio-head { max-width: var(--max); margin: 0 auto clamp(2rem, 5vh, 3.5rem); padding: 0 var(--pad); }
+.studio { position: relative; z-index: 2; padding: 0 var(--pad) var(--band); }
+.studio-head { max-width: var(--max); margin: 0 auto clamp(2rem, 5vh, 3.5rem); }
 .studio-head h2 { font-size: clamp(2rem, 5vw, 4.4rem); margin-bottom: 1rem; }
 .studio-head p { max-width: 52ch; color: var(--ink-muted); }
 
+/* Simple responsive grid gallery — no horizontal scroll, no pinning.
+   The photos are landscape-ish 4:5 portraits, so a grid of equal-width
+   columns with a modest gap reads as a clean studio contact sheet. */
+.studio-track { padding: 0; }
+.studio-stage { max-width: var(--max); margin: 0 auto; }
 .rail {
-  display: flex;
-  gap: clamp(0.75rem, 1.5vw, 1.5rem);
-  padding: 0 var(--pad);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding: 0;
+  overflow: visible;
 }
 .rail:focus-visible { outline-offset: -4px; }
 
-.plate { flex: 0 0 auto; width: clamp(230px, 30vw, 400px); margin: 0; scroll-snap-align: center; }
+.plate { margin: 0; }
 .plate img {
   width: 100%;
-  /* height:auto is load-bearing: the width/height attributes on the <img>
-     are presentational hints that set `height`, which would otherwise beat
-     aspect-ratio and render each plate at its full 1020px intrinsic height. */
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -760,28 +760,14 @@ html.motion .g4 { animation-duration: 16s; animation-delay: -2s; }
   color: var(--ink-faint);
 }
 
-html.motion .studio-track { height: 300vh; position: relative; padding: 0; }
-html.motion .studio-stage {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(1.5rem, 4vh, 3rem);
-  overflow: hidden;
-}
-/* `margin: 0 auto` would otherwise shrink this to max-content inside the
-   flex stage and float it into the middle of the screen. */
-html.motion .studio-head { margin-bottom: 0; width: 100%; }
-html.motion .rail {
-  overflow: visible;
-  transform: translate3d(var(--rail-x, 0px), 0, 0);
-  will-change: transform;
-}
-/* Pinned, the plates have to fit the viewport's height as well as its width,
-   so cap them against svh — otherwise a short laptop screen clips them. */
-html.motion .plate { width: min(clamp(230px, 30vw, 400px), 40svh); }
+/* When motion is on, the grid still works as a grid — no pinned horizontal
+   travel. The old pinned scroll was disorienting and people couldn't see
+   all the photos at a glance. */
+html.motion .studio-track { height: auto; position: relative; padding: 0; }
+html.motion .studio-stage { position: relative; top: auto; height: auto; display: block; overflow: visible; }
+html.motion .studio-head { margin-bottom: clamp(2rem, 5vh, 3.5rem); width: auto; max-width: var(--max); }
+html.motion .rail { overflow: visible; transform: none; will-change: auto; }
+html.motion .plate { width: auto; }
 
 /* ==========================================================================
    7 · Proof
@@ -944,7 +930,11 @@ html.motion .reveal.will-reveal { opacity: 0; transform: translateY(22px); }
   .visit-grid { grid-template-columns: 1fr; }
   .chair { grid-template-columns: 1fr; gap: 1.75rem; }
   .chair-reverse > .chair-photo { order: 0; }
-  .chair-photo img, .chair-photo-type { aspect-ratio: 3 / 2; }
+  /* Keep the full portrait visible on mobile — the 3:2 crop was cutting
+     people in half. Show the whole photo at its natural 4:5 ratio. */
+  .chair-photo { max-width: 22rem; }
+  .chair-photo img { height: auto; aspect-ratio: 4 / 5; }
+  .chair-photo-type { aspect-ratio: 4 / 5; }
 }
 
 @media (max-width: 860px) {
@@ -967,7 +957,6 @@ html.motion .reveal.will-reveal { opacity: 0; transform: translateY(22px); }
 
 @media (max-width: 560px) {
   .hero-actions .btn, .finale-actions .btn { flex: 1 1 100%; }
-  .plate { width: 78vw; }
   .glyph { display: none; }
   .proof-stars { letter-spacing: 0.2em; }
 }
