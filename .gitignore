@@ -8,3 +8,6 @@ site/share-latest.html
 # local verification artefacts
 .playwright-mcp/
 *.png.tmp
+
+# preview screenshots, not part of the site
+shots/
