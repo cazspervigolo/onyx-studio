@@ -1,0 +1,13 @@
+{
+  "name": "Onyx Studio — Barber, Melbourne CBD",
+  "short_name": "Onyx Studio",
+  "description": "Precision barbering on Little Bourke Street, Melbourne CBD.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f4f2",
+  "theme_color": "#0e0f11",
+  "icons": [
+    { "src": "images/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

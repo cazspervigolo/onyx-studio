@@ -4,22 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barber Melbourne CBD | Onyx Studio — Book Online</title>
-  <meta name="description" content="Onyx Studio — precision barbering on Little Bourke Street, Melbourne CBD. Rated 5.0 from 1,320+ reviews. Book your chair online in under a minute.">
+  <meta name="description" content="Onyx Studio — precision barbering on Little Bourke Street, Melbourne CBD. Rated 5.0 from 1,320+ reviews on Fresha. Book your chair online in under a minute.">
+
+  <!-- ⚠️ UNPUBLISHED PITCH BUILD.
+       This page is a proposal for Onyx Studio, not their official site.
+       Delete the next line ONLY once Onyx have seen it and authorised
+       publication. Until then it must stay out of search results so it
+       cannot compete with onyxstudio.melbourne for their own name. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="canonical" href="https://onyxstudio.melbourne/">
+  <meta name="theme-color" content="#F4F4F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E0F11" media="(prefers-color-scheme: dark)">
+
   <!-- Link previews (WhatsApp / iMessage / socials) -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Onyx Studio">
   <meta property="og:title" content="Onyx Studio — Barber, Melbourne CBD">
   <meta property="og:description" content="Precision barbering on Little Bourke Street. Rated 5.0 from 1,320+ reviews. Book online in under a minute.">
-  <meta property="og:url" content="https://onyx-studio-melbourne.higgsfield.app/">
-  <meta property="og:image" content="https://onyx-studio-melbourne.higgsfield.app/images/onyx-hero-poster.jpg">
+  <meta property="og:url" content="https://onyxstudio.melbourne/">
+  <meta property="og:image" content="https://onyxstudio.melbourne/images/onyx-hero-poster.jpg">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Warm light through the windows of Onyx Studio, Melbourne CBD">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="images/logo.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Inter Variable — SIL Open Font License. Legal stand-in for Google Sans Flex. -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Inter Variable, self-hosted (SIL Open Font License). No third-party
+       request, so the type never blocks or flashes on a slow connection. -->
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=21">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,8 +48,9 @@
     "url": "https://onyxstudio.melbourne/",
     "telephone": "+61 3 9602 4625",
     "email": "onyxstudio.melbourne@gmail.com",
-    "image": "images/hero-chair.webp",
+    "image": "https://onyxstudio.melbourne/images/onyx-hero-poster.jpg",
     "priceRange": "$$",
+    "currenciesAccepted": "AUD",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Level 1, 377 Little Bourke Street",
@@ -45,220 +65,286 @@
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "17:00" }
     ],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1320" },
+    "hasMap": "https://maps.app.goo.gl/zm2etbhuZQbDkgJt7",
     "sameAs": [
       "https://www.instagram.com/onyxstudio.melb/",
       "https://www.fresha.com/a/onyx-studio-melbourne-377-little-bourke-street-vw90huqt"
     ]
   }
   </script>
+  <!-- Note: the 5.0 / 1,320+ rating is real and is shown on the page with its
+       source named (Fresha). It is deliberately NOT declared as schema.org
+       aggregateRating: those reviews were collected by Fresha, not by this
+       site, and Google asks that aggregateRating reflect reviews the site
+       itself hosts. Claiming them here would risk a structured-data penalty
+       on Onyx's own domain. -->
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== Nav ===== -->
+  <noscript>
+    <p class="noscript-note">
+      This site works best with JavaScript on — it fills in the studio's live
+      opening hours and booking links. Without it you can still reach us:
+      call <a href="tel:+61396024625">(03) 9602 4625</a>, or book at
+      <a href="https://www.fresha.com/a/onyx-studio-melbourne-377-little-bourke-street-vw90huqt">Fresha</a>.
+    </p>
+  </noscript>
+
+  <!-- ===== Header ===== -->
   <header class="nav" id="top">
     <a class="brand" href="#top" aria-label="Onyx Studio home">
       <img class="brand-logo" src="images/logo-ink.png" alt="Onyx Studio" width="906" height="316">
     </a>
+
     <nav class="nav-links" aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#team">The team</a>
-      <a href="#gallery">The studio</a>
+      <a href="#team">The chairs</a>
+      <a href="#studio">The studio</a>
       <a href="#visit">Visit</a>
     </nav>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
-    <a class="btn btn-primary nav-cta" data-bind-href="booking" href="#visit">Book a chair</a>
+
+    <p class="status" data-status hidden>
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-text" data-status-text></span>
+    </p>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+
+    <a class="btn btn-primary nav-cta" data-bind-href="booking" data-cta="book-nav" href="#visit">Book a chair</a>
   </header>
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Sections" hidden>
     <a href="#services">Services</a>
-    <a href="#team">The team</a>
-    <a href="#gallery">The studio</a>
+    <a href="#team">The chairs</a>
+    <a href="#studio">The studio</a>
     <a href="#visit">Visit &amp; hours</a>
-    <a data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
-    <a class="mobile-menu-book" data-bind-href="booking" href="#visit">Book a chair</a>
+    <a data-bind-href="phone" data-cta="call-menu" href="#" data-bind="phone">(03) 9602 4625</a>
+    <a class="mobile-menu-book" data-bind-href="booking" data-cta="book-menu" href="#visit">Book a chair</a>
   </nav>
 
   <main id="main">
 
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <canvas class="hero-canvas" data-particles="dark" aria-hidden="true"></canvas>
+  <!-- ===== 1 · Arrival ===== -->
+  <section class="hero" data-scene="hero">
+    <canvas class="light-canvas" data-light="day" aria-hidden="true"></canvas>
     <div class="hero-inner">
-      <img class="hero-logo" src="images/logo-ink.png" alt="Onyx Studio" width="906" height="316">
-      <h1>Precision barbering in Melbourne CBD</h1>
-      <p class="hero-proof"><span class="star">★</span> <strong data-bind="rating">5.0</strong> from <span data-bind="reviewCount">1,320+</span> reviews on <span data-bind="reviewSource">Fresha</span></p>
+      <img class="hero-logo" src="images/logo-ink.png" alt="Onyx Studio" width="906" height="316" fetchpriority="high">
+      <h1 class="hero-title">
+        <span class="line"><span>Precision barbering</span></span>
+        <span class="line"><span>in Melbourne CBD</span></span>
+      </h1>
+      <p class="hero-proof">
+        <span class="star" aria-hidden="true">★</span>
+        <strong data-bind="rating">5.0</strong> from <span data-bind="reviewCount">1,320+</span>
+        reviews on <span data-bind="reviewSource">Fresha</span>
+      </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" data-bind-href="booking" href="#visit">Book a chair</a>
-        <a class="btn btn-tint" href="#services">See services</a>
+        <a class="btn btn-primary btn-lg" data-bind-href="booking" data-cta="book-hero" href="#visit">Book a chair</a>
+        <a class="btn btn-tint btn-lg" href="#services">See the menu</a>
       </div>
     </div>
     <div class="hero-foot">
-      <span data-bind="addressShort">Melbourne VIC 3000</span>
-      <span aria-hidden="true">·</span>
-      <span data-bind="todayHours">Open today</span>
+      <span data-bind="addressLine1">Level 1, 377 Little Bourke Street</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <span data-bind="todayHours">Melbourne VIC 3000</span>
+    </div>
+    <span class="scroll-cue" aria-hidden="true"><span></span></span>
+  </section>
+
+  <!-- ===== 2 · The room breathes (pinned) ===== -->
+  <section class="reel" id="reel" aria-label="Inside the studio">
+    <div class="reel-track" data-reel-track>
+      <div class="reel-stage" data-reel-stage>
+        <figure class="reel-frame" data-reel-frame>
+          <video class="reel-video" data-reel-video muted loop playsinline preload="none"
+                 poster="images/onyx-hero-poster.jpg" aria-label="Inside Onyx Studio">
+            <source src="images/onyx-hero.webm" type="video/webm">
+            <source src="images/onyx-hero.mp4" type="video/mp4">
+          </video>
+          <span class="reel-grain" aria-hidden="true"></span>
+          <span class="reel-vignette" aria-hidden="true"></span>
+        </figure>
+        <p class="reel-line" data-reel-line>
+          <span>Three chairs.</span> <span>No rush.</span>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Showreel (studio video) ===== -->
-  <section class="showreel">
-    <div class="showreel-frame reveal">
-      <video class="showreel-video" autoplay muted loop playsinline preload="metadata" poster="images/onyx-hero-poster.jpg" aria-label="Onyx Studio in motion">
-        <source src="images/onyx-hero.mp4" type="video/mp4">
-      </video>
-    </div>
-  </section>
-
-  <!-- ===== Statement (scroll reveal + floating tool glyphs) ===== -->
+  <!-- ===== 3 · The statement ===== -->
   <section class="statement" id="statement">
     <span class="glyph g1" aria-hidden="true"><!-- scissors -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
     </span>
     <span class="glyph g2" aria-hidden="true"><!-- razor -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L14 10"/><path d="M13 3 L21 3 L21 11 L14 11 Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L14 10"/><path d="M13 3 L21 3 L21 11 L14 11 Z"/></svg>
     </span>
     <span class="glyph g3" aria-hidden="true"><!-- comb -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="4" rx="1"/><line x1="6" y1="14" x2="6" y2="7"/><line x1="10" y1="14" x2="10" y2="7"/><line x1="14" y1="14" x2="14" y2="7"/><line x1="18" y1="14" x2="18" y2="7"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="4" rx="1"/><line x1="6" y1="14" x2="6" y2="7"/><line x1="10" y1="14" x2="10" y2="7"/><line x1="14" y1="14" x2="14" y2="7"/><line x1="18" y1="14" x2="18" y2="7"/></svg>
     </span>
-    <span class="glyph g4" aria-hidden="true"><!-- straight razor blade -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c6 1 12-3 18-11"/><path d="M3 17l2 3"/></svg>
+    <span class="glyph g4" aria-hidden="true"><!-- straight razor -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c6 1 12-3 18-11"/><path d="M3 17l2 3"/></svg>
     </span>
     <div class="statement-inner">
-      <h2 id="statement-text">Three chairs, no rush, and a cut considered down to the last line.</h2>
+      <h2 id="statement-text" data-words>Three chairs, no rush, and a cut considered down to the last line.</h2>
     </div>
   </section>
 
-  <!-- ===== Services — dark glow tiles ===== -->
+  <!-- ===== 4 · The menu ===== -->
   <section class="services" id="services">
     <div class="section-head reveal">
       <span class="eyebrow">Services</span>
       <h2>The menu.</h2>
       <p>Fixed prices, honest durations, booked to the minute on Fresha. What you see is what you pay.</p>
     </div>
+
     <div class="tile-grid">
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">$80</span>
         <h3>Fade / taper</h3>
         <p>Zero to blended, finished sharp.</p>
         <span class="tile-meta">30 min – 1 hr</span>
       </a>
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">$80</span>
         <h3>Scissor cut</h3>
         <p>Shape, texture and movement. No clippers.</p>
         <span class="tile-meta">30 min – 1 hr</span>
       </a>
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">from $70</span>
         <h3>Standard cut</h3>
         <p>No fade or taper, cleaned up and styled.</p>
         <span class="tile-meta">30 – 45 min</span>
       </a>
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">$100</span>
         <h3>Restyle</h3>
         <p>A new direction, talked through first.</p>
         <span class="tile-meta">45 min – 1 hr</span>
       </a>
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">$80</span>
         <h3>Afro / curly</h3>
         <p>Cut for your curl pattern, not against it.</p>
         <span class="tile-meta">45 min – 1 hr</span>
       </a>
-      <a class="tile reveal" data-bind-href="booking" href="#visit">
+      <a class="tile reveal" data-tilt data-bind-href="booking" data-cta="book-tile" href="#visit">
         <span class="tile-price">$40</span>
         <h3>Buzz cut</h3>
         <p>One length all over, no fades.</p>
         <span class="tile-meta">30 min</span>
       </a>
-      <a class="tile tile-feature reveal" data-bind-href="booking" href="#visit">
+      <a class="tile tile-feature reveal" data-tilt data-bind-href="booking" data-cta="book-tile-feature" href="#visit">
         <span class="tile-price">$160</span>
         <h3>The Onyx Experience</h3>
         <p>Every service we offer, in one sitting. The full ritual: cut, detail and finish.</p>
         <span class="tile-meta">1 – 1.5 hrs</span>
       </a>
     </div>
-    <p class="services-note reveal">Prices as listed on our Fresha booking page. Not sure what to book? <a class="services-note-link" data-bind-href="booking" href="#visit">Book a standard cut</a> and we'll talk it through in the chair.</p>
+
+    <p class="services-note reveal">
+      Prices as listed on our Fresha booking page. Not sure what to book?
+      <a class="link" data-bind-href="booking" data-cta="book-note" href="#visit">Book a standard cut</a>
+      and we'll talk it through in the chair.
+    </p>
   </section>
 
-  <!-- ===== Meet the team ===== -->
+  <!-- ===== 5 · The chairs ===== -->
   <section class="team" id="team">
     <div class="section-head reveal">
-      <span class="eyebrow">Meet the team</span>
-      <h2>The team at Onyx.</h2>
+      <span class="eyebrow">The chairs</span>
+      <h2>Three barbers.</h2>
+      <p>In their own words.</p>
     </div>
 
-    <div class="profiles">
-      <!-- Renee -->
-      <article class="profile reveal">
-        <div class="profile-photo">
-          <img src="images/renee.webp" alt="Renee, founder and owner of Onyx Studio" loading="lazy">
+    <div class="chairs">
+      <article class="chair reveal">
+        <span class="chair-no" aria-hidden="true">01</span>
+        <div class="chair-photo">
+          <img src="images/renee.webp" alt="Renee, founder and owner of Onyx Studio, seated on a barber chair" width="1000" height="1430" loading="lazy" decoding="async">
         </div>
-        <div class="profile-body">
-          <p class="profile-role">Founder &amp; owner · 7 years</p>
-          <h3>Meet Renee</h3>
-          <p>Hi, I’m Renee - founder and owner of Onyx. I’ve been barbering for 7 years and created the studio around quality service, strong attention to detail, and a space clients genuinely enjoy being in.</p>
-          <p>I’m experienced across all styles of men’s haircuts, from classic cuts to fades and modern styles, tailoring each service to suit the individual. I particularly specialise in scissor work, with a focus on shape, texture and movement - creating natural, well-balanced cuts that grow out nicely and feel effortless to wear.</p>
-          <p>My approach is relaxed but detail-driven - taking the time to understand what works best for each client, with good conversation, good energy, and a haircut that leaves you feeling confident and refreshed.</p>
+        <div class="chair-body">
+          <p class="chair-role">Founder &amp; owner · 7 years</p>
+          <h3>Renee</h3>
+          <p>Hi, I’m Renee — founder and owner of Onyx. I’ve been barbering for 7 years and created the studio around quality service, strong attention to detail, and a space clients genuinely enjoy being in.</p>
+          <p>I’m experienced across all styles of men’s haircuts, from classic cuts to fades and modern styles, tailoring each service to suit the individual. I particularly specialise in scissor work, with a focus on shape, texture and movement — creating natural, well-balanced cuts that grow out nicely and feel effortless to wear.</p>
+          <p>My approach is relaxed but detail-driven — taking the time to understand what works best for each client, with good conversation, good energy, and a haircut that leaves you feeling confident and refreshed.</p>
+          <a class="link" data-bind-href="booking" data-cta="book-renee" href="#visit">Book with Renee</a>
         </div>
       </article>
 
-      <!-- Mario -->
-      <article class="profile profile-reverse reveal">
-        <div class="profile-photo">
-          <img src="images/mario.webp" alt="Mario, senior barber at Onyx Studio" loading="lazy">
+      <article class="chair chair-reverse reveal">
+        <span class="chair-no" aria-hidden="true">02</span>
+        <div class="chair-photo">
+          <img src="images/mario.webp" alt="Mario, senior barber at Onyx Studio, arms folded" width="1000" height="1507" loading="lazy" decoding="async">
         </div>
-        <div class="profile-body">
-          <p class="profile-role">Senior barber · 10+ years · Valencia, Spain</p>
-          <h3>Meet Mario</h3>
+        <div class="chair-body">
+          <p class="chair-role">Senior barber · 10+ years · Valencia, Spain</p>
+          <h3>Mario</h3>
           <p>Hola, my name is Mario, and I’m originally from Valencia, Spain.</p>
           <p>For me, hair design is much more than simply cutting hair. It’s about creating a style that complements each client’s head shape, hair texture, and lifestyle, while providing a unique experience that helps them feel confident and look their best.</p>
           <p>With over 10 years of experience as a barber, I combine technical precision with a personalized consultation to create hairstyles that enhance each client’s individuality and natural features.</p>
+          <a class="link" data-bind-href="booking" data-cta="book-mario" href="#visit">Book with Mario</a>
         </div>
       </article>
 
-      <!-- Duvan -->
-      <article class="profile profile-textonly reveal">
-        <div class="profile-body">
-          <p class="profile-role">Senior barber · rated 5.0 on Fresha</p>
-          <h3>Meet Duvan</h3>
-          <p>A senior barber on the Onyx floor, working across the full menu - skin fades, scissor work and beard detailing - with the precision and unhurried care the studio is known for. Book with Duvan on Fresha to see the chair for yourself.</p>
+      <article class="chair chair-plate reveal">
+        <span class="chair-no" aria-hidden="true">03</span>
+        <div class="chair-photo chair-photo-type">
+          <span class="plate-name" aria-hidden="true">Duvan</span>
+        </div>
+        <div class="chair-body">
+          <p class="chair-role">Senior barber · rated 5.0 on Fresha</p>
+          <h3>Duvan</h3>
+          <p>A senior barber on the Onyx floor, working across the full menu — skin fades, scissor work and beard detailing — with the precision and unhurried care the studio is known for.</p>
+          <p>Book with Duvan on Fresha to see the chair for yourself.</p>
+          <a class="link" data-bind-href="booking" data-cta="book-duvan" href="#visit">Book with Duvan</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ===== Gallery — mirror rail ===== -->
-  <section class="gallery" id="gallery">
-    <div class="section-head reveal">
-      <span class="eyebrow">The studio</span>
-      <h2>Concrete, chrome &amp; one monstera.</h2>
-      <p>Restored chairs, honest light, and tools that get sharpened more often than they get photographed. Level 1, up the stairs off Little Bourke Street.</p>
-    </div>
-    <div class="mirror-rail" tabindex="0" aria-label="Photos of the studio, scroll sideways to see more">
-      <figure class="mirror reveal"><img src="images/mirror-row.webp" alt="Barber chairs reflected in a leaning floor mirror at Onyx Studio" loading="lazy"><figcaption>the mirror wall</figcaption></figure>
-      <figure class="mirror reveal"><img src="images/chair-mirror.webp" alt="A black barber chair in front of a tall mirror" loading="lazy"><figcaption>chair one</figcaption></figure>
-      <figure class="mirror reveal"><img src="images/tools.webp" alt="Shears, thinning scissors and an open razor laid out on a towel" loading="lazy"><figcaption>the kit</figcaption></figure>
-      <figure class="mirror reveal"><img src="images/monstera.webp" alt="A monstera plant behind a black barber chair" loading="lazy"><figcaption>the monstera</figcaption></figure>
-      <figure class="mirror reveal"><img src="images/hero-chair.webp" alt="A barber chair beneath the studio skylight" loading="lazy"><figcaption>under the skylight</figcaption></figure>
+  <!-- ===== 6 · The studio (pinned horizontal) ===== -->
+  <section class="studio" id="studio" aria-label="Photos of the studio">
+    <div class="studio-track" data-rail-track>
+      <div class="studio-stage" data-rail-stage>
+        <div class="studio-head">
+          <span class="eyebrow">The studio</span>
+          <h2>Concrete, chrome<br>&amp; one monstera.</h2>
+          <p>Restored chairs, honest light, and tools that get sharpened more often than they get photographed. Level 1, up the stairs off Little Bourke Street.</p>
+        </div>
+        <div class="rail" data-rail tabindex="0" aria-label="Studio photos — scroll sideways to see more">
+          <figure class="plate"><img src="images/mirror-row.webp" alt="Barber chairs reflected in a leaning floor mirror at Onyx Studio" width="815" height="1020" loading="lazy" decoding="async"><figcaption>the mirror wall</figcaption></figure>
+          <figure class="plate"><img src="images/chair-mirror.webp" alt="A black barber chair in front of a tall mirror" width="815" height="1020" loading="lazy" decoding="async"><figcaption>chair one</figcaption></figure>
+          <figure class="plate"><img src="images/tools.webp" alt="Shears, thinning scissors and an open razor laid out on a towel" width="821" height="1020" loading="lazy" decoding="async"><figcaption>the kit</figcaption></figure>
+          <figure class="plate"><img src="images/monstera.webp" alt="A monstera plant behind a black barber chair" width="816" height="1020" loading="lazy" decoding="async"><figcaption>the monstera</figcaption></figure>
+          <figure class="plate"><img src="images/hero-chair.webp" alt="A barber chair beneath the studio skylight" width="816" height="1020" loading="lazy" decoding="async"><figcaption>under the skylight</figcaption></figure>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Proof band (honest aggregate, links to real reviews) ===== -->
+  <!-- ===== 7 · Proof ===== -->
   <section class="proof">
     <div class="proof-inner reveal">
       <span class="eyebrow">Reviews</span>
-      <div class="proof-score" data-bind="rating">5.0</div>
-      <div class="proof-stars" aria-hidden="true">★★★★★</div>
-      <p class="proof-label">Rated <strong data-bind="rating">5.0</strong> from <span data-bind="reviewCount">1,320+</span> verified client reviews on Fresha.</p>
-      <a class="btn btn-tint" data-bind-href="booking" href="#visit">Read reviews &amp; book</a>
+      <p class="proof-score"><span data-count="5.0" data-count-decimals="1">5.0</span></p>
+      <p class="proof-stars" aria-hidden="true">★★★★★</p>
+      <p class="proof-label">
+        Rated <strong data-bind="rating">5.0</strong> from
+        <strong data-bind="reviewCount">1,320+</strong>
+        verified client reviews on <span data-bind="reviewSource">Fresha</span>.
+      </p>
+      <a class="btn btn-tint" data-bind-href="booking" data-cta="book-proof" href="#visit">Read the reviews &amp; book</a>
     </div>
   </section>
 
-  <!-- ===== Visit ===== -->
+  <!-- ===== 8 · Visit ===== -->
   <section class="visit" id="visit">
     <div class="visit-grid">
       <div class="visit-info reveal">
@@ -269,30 +355,37 @@
           <span data-bind="addressLine2">Melbourne VIC 3000</span>
         </address>
         <div class="visit-actions">
-          <a class="btn btn-primary" data-bind-href="maps" href="#" target="_blank" rel="noopener">Get directions</a>
-          <a class="btn btn-tint" data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
-          <a class="btn btn-tint" data-bind-href="instagram" href="#" target="_blank" rel="noopener" data-bind="instagramHandle">@onyxstudio.melb</a>
+          <a class="btn btn-primary" data-bind-href="maps" data-cta="directions" href="#" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-tint" data-bind-href="phone" data-cta="call-visit" href="#" data-bind="phone">(03) 9602 4625</a>
+          <a class="btn btn-tint" data-bind-href="instagram" data-cta="instagram" href="#" target="_blank" rel="noopener" data-bind="instagramHandle">@onyxstudio.melb</a>
         </div>
         <p class="visit-note">Look for the Level 1 entrance on Little Bourke Street, in the heart of the CBD between Elizabeth and Queen.</p>
       </div>
+
       <div class="visit-hours reveal">
-        <h3 class="hours-title">Hours</h3>
+        <div class="hours-head">
+          <h3>Hours</h3>
+          <p class="status status-inline" data-status hidden>
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-text" data-status-text></span>
+          </p>
+        </div>
         <dl class="hours" data-hours></dl>
       </div>
     </div>
   </section>
 
-  <!-- ===== Booking finale — inverted black card ===== -->
+  <!-- ===== 9 · Finale ===== -->
   <section class="finale">
     <div class="finale-card">
-      <canvas class="finale-canvas" data-particles="light" aria-hidden="true"></canvas>
+      <canvas class="light-canvas" data-light="night" aria-hidden="true"></canvas>
       <div class="finale-inner reveal">
-        <span class="eyebrow" style="color:var(--tile-muted)">Booking</span>
+        <span class="eyebrow">Booking</span>
         <h2>Ready when you are.</h2>
         <p>Pick your barber, service and time on Fresha. Takes about a minute. Prefer to talk it through? Give the studio a call.</p>
         <div class="finale-actions">
-          <a class="btn btn-invert" data-bind-href="booking" href="#">Book a chair</a>
-          <a class="btn btn-invert-tint" data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
+          <a class="btn btn-invert btn-lg" data-bind-href="booking" data-cta="book-finale" href="#">Book a chair</a>
+          <a class="btn btn-invert-tint btn-lg" data-bind-href="phone" data-cta="call-finale" href="#" data-bind="phone">(03) 9602 4625</a>
         </div>
       </div>
     </div>
@@ -303,26 +396,26 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer-inner">
-      <img class="footer-logo-img" src="images/logo-ink.png" alt="Onyx Studio" width="906" height="316">
+      <img class="footer-logo" src="images/logo-ink.png" alt="Onyx Studio" width="906" height="316" loading="lazy">
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Studio</h4>
+          <h3>Studio</h3>
           <a href="#services">Services</a>
-          <a href="#team">The team</a>
-          <a href="#gallery">The studio</a>
+          <a href="#team">The chairs</a>
+          <a href="#studio">The studio</a>
           <a href="#visit">Visit</a>
         </div>
         <div class="footer-col">
-          <h4>Book</h4>
-          <a data-bind-href="booking" href="#" target="_blank" rel="noopener">Book on Fresha</a>
-          <a data-bind-href="maps" href="#" target="_blank" rel="noopener">Get directions</a>
+          <h3>Book</h3>
+          <a data-bind-href="booking" data-cta="book-footer" href="#" target="_blank" rel="noopener">Book on Fresha</a>
+          <a data-bind-href="maps" data-cta="directions-footer" href="#" target="_blank" rel="noopener">Get directions</a>
           <a data-bind-href="instagram" href="#" target="_blank" rel="noopener" data-bind="instagramHandle">@onyxstudio.melb</a>
         </div>
         <div class="footer-col">
-          <h4>Find us</h4>
+          <h3>Find us</h3>
           <span data-bind="addressLine1">Level 1, 377 Little Bourke Street</span>
           <span data-bind="addressLine2">Melbourne VIC 3000</span>
-          <a data-bind-href="phone" href="#" data-bind="phone">(03) 9602 4625</a>
+          <a data-bind-href="phone" data-cta="call-footer" href="#" data-bind="phone">(03) 9602 4625</a>
           <a data-bind-href="email" href="#" data-bind="email">onyxstudio.melbourne@gmail.com</a>
         </div>
       </div>
@@ -331,12 +424,13 @@
   </footer>
 
   <!-- Thumb-reachable booking bar, phones only, appears past the hero -->
-  <a class="mobile-book-bar" data-bind-href="booking" href="#visit">
-    Book a chair<span class="bar-proof" aria-hidden="true">★ <span data-bind="rating">5.0</span> · <span data-bind="reviewCount">1,320+</span> reviews</span>
+  <a class="book-bar" data-bind-href="booking" data-cta="book-bar" href="#visit">
+    <span>Book a chair</span>
+    <span class="book-bar-proof" aria-hidden="true">★ <span data-bind="rating">5.0</span> · <span data-bind="reviewCount">1,320+</span></span>
   </a>
 
-  <script src="config.js?v=15"></script>
-  <script src="particles.js?v=15"></script>
-  <script src="script.js?v=15"></script>
+  <script src="config.js?v=21"></script>
+  <script src="motion.js?v=21"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>
