@@ -28,7 +28,10 @@ const SITE = {
   addressLine2: "Melbourne VIC 3000",
   mapsUrl: "https://maps.app.goo.gl/zm2etbhuZQbDkgJt7",
 
-  // --- Hours (from the Fresha listing) --------------------------------------
+  // --- Hours --------------------------------------------------------------
+  // Format: ["Day", "9am – 6pm"] · write "Closed" for a closed day.
+  // These drive the hours table, the "open today" line, and the live
+  // Open / Closed badge in the header. Change them here and nowhere else.
   hours: [
     ["Monday",    "9am – 6pm"],
     ["Tuesday",   "9am – 9pm"],
@@ -38,6 +41,10 @@ const SITE = {
     ["Saturday",  "10am – 5pm"],
     ["Sunday",    "11am – 5pm"],
   ],
+
+  // The studio's own time zone, so the live Open / Closed badge is right for
+  // Little Bourke Street rather than for wherever the visitor is sitting.
+  timeZone: "Australia/Melbourne",
 
   // --- Social -------------------------------------------------------------
   instagram: "https://www.instagram.com/onyxstudio.melb/",

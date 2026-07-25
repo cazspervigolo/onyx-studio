@@ -4,3 +4,7 @@
 # generated single-file share bundles (2MB base64 exports)
 site/share.html
 site/share-latest.html
+
+# local verification artefacts
+.playwright-mcp/
+*.png.tmp

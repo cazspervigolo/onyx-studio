@@ -1,0 +1,13 @@
+# ⚠️ UNPUBLISHED PITCH BUILD.
+# This is a proposal for Onyx Studio, not their official site. While it is
+# unauthorised it must stay out of search results so it cannot compete with
+# onyxstudio.melbourne for their own name.
+#
+# When Onyx have seen it and said yes, delete the two lines below and
+# uncomment the block underneath.
+User-agent: *
+Disallow: /
+
+# User-agent: *
+# Allow: /
+# Sitemap: https://onyxstudio.melbourne/sitemap.xml
