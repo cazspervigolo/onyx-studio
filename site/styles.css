@@ -27,8 +27,8 @@
 
 :root {
   /* --- Surfaces: the room ------------------------------------------------ */
-  --concrete:      #f4f4f2;   /* the floor and the walls */
-  --concrete-warm: #eeeeeb;   /* a band, one step down */
+  --concrete:      #ffffff;   /* the page — one white, no warm tint */
+  --concrete-warm: #f7f7f5;   /* a band, one step down */
   --leather:       #0e0f11;   /* the chairs */
 
   /* --- Ink: two, as the system demands ----------------------------------- */
@@ -365,7 +365,7 @@ html.motion .status.is-open .status-dot { animation: pulse 2.6s ease-in-out infi
   letter-spacing: -0.032em;
   margin-bottom: clamp(1.25rem, 3vh, 2rem);
 }
-.hero-title .line { display: block; overflow: hidden; }
+.hero-title .line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
 .hero-title .line > span { display: block; }
 
 html.motion .hero-title .line > span {
