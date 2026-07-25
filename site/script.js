@@ -184,6 +184,26 @@
     el.textContent = isOpen ? "Open until " + label(todaySpan.close) : line;
   });
 
+  /* "Open 7 days" is the kind of micro-trust line the top-rated Melbourne
+     shops all run. It is computed from the hours above rather than typed, so
+     it can never contradict them: change a day to "Closed" in config.js and
+     this line disappears by itself. */
+  var daysOpen = SITE.hours.filter(function (row) { return !!span(row); }).length;
+  $("[data-open-every-day]").forEach(function (el) {
+    if (daysOpen === SITE.hours.length && daysOpen === 7) {
+      el.textContent = "Open 7 days";
+      el.hidden = false;
+    }
+  });
+
+  // The "how to get here" line, hidden unless config.js provides one.
+  $('[data-bind="transport"]').forEach(function (el) {
+    if (SITE.transport) {
+      el.textContent = SITE.transport;
+      el.hidden = false;
+    }
+  });
+
   $("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   /* =======================================================================

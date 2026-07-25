@@ -826,6 +826,12 @@ html.motion .plate { width: min(clamp(230px, 30vw, 400px), 40svh); }
 .hours-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem; }
 .hours-head h3 { font-size: 1.35rem; }
 .status-inline { font-size: 0.78rem; }
+.hours-every-day {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+.visit-note + .visit-note { margin-top: 0.6rem; }
 
 .hours { display: grid; grid-template-columns: 1fr auto; margin: 0; font-variant-numeric: tabular-nums; }
 .hours dt, .hours dd {
