@@ -10,10 +10,16 @@
    Those all live in config.js.
    ========================================================================== */
 
-/* --- Inter Variable, self-hosted. SIL Open Font License. ----------------- */
+/* --- Archivo Variable, self-hosted. SIL Open Font License. ---------------
+   Chosen over Inter deliberately. Inter is the default face of everything
+   built in the last three years, and a studio selling precision shouldn't
+   sound like everything else. Archivo comes from newsprint and signage: it
+   sets narrower, so display type can be large without shouting, it has grip
+   in the letterforms that suits concrete and steel, and its numerals carry
+   the price tiles — which are doing real work on this page. */
 @font-face {
-  font-family: "Inter";
-  src: url("fonts/inter-latin.woff2") format("woff2");
+  font-family: "Archivo";
+  src: url("fonts/archivo-latin.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -31,7 +37,7 @@
   /* Every grey here is measured against the concrete. --ink-faint carries
      small 12–13px labels, so it has to clear 4.5:1, not 3:1 — the obvious
      #8a8d95 only reaches 3.02:1 and fails them all. */
-  --ink-faint:     #6b6e74;   /* 4.64:1 — eyebrows, captions, footer labels */
+  --ink-faint:     #6b6e74;   /* 4.64:1 — captions, roles, footer labels */
   --ink-dim:       #6f7278;   /* 4.38:1 — unlit statement words (large type) */
   --on-dark:       #f4f4f2;
   --on-dark-muted: #9ea3ab;
@@ -48,7 +54,7 @@
   --hairline:    rgba(18, 19, 23, 0.10);
 
   /* --- Type --------------------------------------------------------------- */
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --w-body:    400;
   --w-display: 450;   /* the signature weight — the whole personality */
   --w-strong:  560;
@@ -142,15 +148,11 @@ section[id], main[id] { scroll-margin-top: 88px; }
 }
 .noscript-note a { color: #fff; }
 
-.eyebrow {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--w-strong);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 1.1rem;
-}
+/* There is deliberately no `.eyebrow` here any more. A small tracked
+   uppercase label above every section heading (SERVICES / THE CHAIRS /
+   VISIT / BOOKING) is the most over-used scaffold on the web right now, and
+   all six were restating the heading directly beneath them. The headings can
+   carry their own sections. */
 
 .link {
   color: var(--ink);
@@ -356,9 +358,11 @@ html.motion .status.is-open .status-dot { animation: pulse 2.6s ease-in-out infi
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 8.2vw, 7.5rem);
-  line-height: 0.96;
-  letter-spacing: -0.038em;
+  /* Capped at 6rem. Archivo sets narrower than Inter, so this reads larger
+     than the number suggests — past it the page is shouting, not designing. */
+  font-size: clamp(2.6rem, 7.6vw, 6rem);
+  line-height: 0.97;
+  letter-spacing: -0.032em;
   margin-bottom: clamp(1.25rem, 3vh, 2rem);
 }
 .hero-title .line { display: block; overflow: hidden; }
@@ -669,18 +673,10 @@ html.motion .g4 { animation-duration: 16s; animation-delay: -2s; }
 }
 .chair-reverse > .chair-photo { order: 2; }
 
-.chair-no {
-  position: absolute;
-  top: -0.35em;
-  right: 0;
-  font-size: clamp(4rem, 11vw, 11rem);
-  font-weight: var(--w-display);
-  letter-spacing: -0.05em;
-  line-height: 1;
-  opacity: 0.055;
-  pointer-events: none;
-}
-.chair-reverse .chair-no { right: auto; left: 0; }
+/* The ghosted 01 / 02 / 03 that used to sit behind each barber is gone.
+   Nothing about Renee being "01" was information the reader needed — it was
+   scaffolding dressed as a sequence. The three-chairs motif already lives in
+   the copy, which is where it means something. */
 
 .chair-photo {
   position: relative;
@@ -794,10 +790,10 @@ html.motion .plate { width: min(clamp(230px, 30vw, 400px), 40svh); }
 .proof { padding: var(--band) var(--pad); background: var(--concrete-warm); text-align: center; }
 .proof-inner { max-width: 680px; margin: 0 auto; }
 .proof-score {
-  font-size: clamp(5rem, 17vw, 14rem);
+  font-size: clamp(4.5rem, 13vw, 10rem);
   font-weight: var(--w-display);
-  letter-spacing: -0.055em;
-  line-height: 0.86;
+  letter-spacing: -0.038em;   /* -0.055em had the glyphs touching */
+  line-height: 0.88;
   font-variant-numeric: tabular-nums;
 }
 .proof-stars { margin: 0.75rem 0 1.1rem; font-size: 1.15rem; letter-spacing: 0.35em; }
@@ -859,7 +855,6 @@ html.motion .plate { width: min(clamp(230px, 30vw, 400px), 40svh); }
   text-align: center;
 }
 .finale-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
-.finale-card .eyebrow { color: var(--on-dark-muted); }
 .finale-card h2 { font-size: clamp(2.2rem, 6vw, 5.2rem); margin-bottom: 1.25rem; }
 .finale-card p { color: var(--on-dark-muted); margin-bottom: 2.25rem; }
 .finale-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
@@ -922,13 +917,18 @@ html.motion .plate { width: min(clamp(230px, 30vw, 400px), 40svh); }
    Reveals
    ========================================================================== */
 
-html.motion .reveal {
-  opacity: 0;
-  transform: translateY(22px);
+/* Reveals enhance a visible default; they never gate visibility.
+
+   `.will-reveal` is added by script.js only to elements that are genuinely
+   below the fold at load, and removed as they arrive. Hiding every .reveal
+   in CSS instead means a background tab, a headless renderer or a social
+   crawler — none of which reliably run IntersectionObserver or fire
+   transitions — ships the page with most of its sections blank. */
+.reveal {
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
-html.motion .reveal.is-visible { opacity: 1; transform: none; }
+html.motion .reveal.will-reveal { opacity: 0; transform: translateY(22px); }
 
 /* ==========================================================================
    Responsive
@@ -939,7 +939,6 @@ html.motion .reveal.is-visible { opacity: 1; transform: none; }
   .chair { grid-template-columns: 1fr; gap: 1.75rem; }
   .chair-reverse > .chair-photo { order: 0; }
   .chair-photo img, .chair-photo-type { aspect-ratio: 3 / 2; }
-  .chair-no { font-size: clamp(3.5rem, 16vw, 7rem); }
 }
 
 @media (max-width: 860px) {
