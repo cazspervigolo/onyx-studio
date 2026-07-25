@@ -264,14 +264,55 @@
      Reveals, tile glow, the score counting up
      ======================================================================= */
 
-  var revealer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("is-visible");
-      revealer.unobserve(e.target);
-    });
-  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-  $(".reveal").forEach(function (el) { revealer.observe(el); });
+  /* Reveals are additive, never a gate on visibility.
+
+     The hidden state is applied here in script, so a page without JavaScript
+     — or one rendered by a crawler that doesn't run it — is simply complete
+     and unanimated rather than a stack of blank sections.
+
+     Nothing is measured. An earlier version only hid elements below the fold,
+     but getBoundingClientRect() at parse time reports a page that hasn't
+     finished laying out, so it classified nothing and no reveal ever ran.
+     Instead every element is hidden and handed to the observer, whose first
+     callback fires on the next frame and immediately reveals whatever is
+     already on screen. Two backstops cover the observer never firing at all:
+     a timer, and print. */
+  var pending = [];
+  $(".reveal").forEach(function (el) {
+    el.classList.add("will-reveal");
+    pending.push(el);
+  });
+
+  function show(el) {
+    el.classList.remove("will-reveal");
+    var i = pending.indexOf(el);
+    if (i > -1) pending.splice(i, 1);
+  }
+  function showAll() { pending.slice().forEach(show); }
+
+  if (pending.length) {
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        show(e.target);
+        revealer.unobserve(e.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    pending.slice().forEach(function (el) { revealer.observe(el); });
+
+    setTimeout(showAll, 10000);
+    window.addEventListener("beforeprint", showAll);
+  }
+
+  /* The studio rail is a real horizontal scroller only when motion is off.
+     With the film running it is driven by page scroll and `overflow: visible`,
+     so a focusable container would take a tab stop and then do nothing with
+     the arrow keys. Drop the tab stop in that mode; page scrolling already
+     moves the rail, so keyboard users still reach every photo. */
+  var rail = document.querySelector("[data-rail]");
+  if (rail && document.documentElement.classList.contains("motion")) {
+    rail.removeAttribute("tabindex");
+  }
 
   // The aura on the dark tiles follows the pointer.
   $("[data-tilt]").forEach(function (tile) {
