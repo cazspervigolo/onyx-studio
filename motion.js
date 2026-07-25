@@ -207,7 +207,10 @@
 
       frameEl.style.setProperty("--s", scale.toFixed(4));
 
-      var dark = range(p, 0.05, 0.4) * 0.92;
+      /* The darkness mirrors the frame: in as it grows, out as it shrinks.
+         Ramping it in and leaving it there ended the section on a black band
+         that cut abruptly back to concrete. */
+      var dark = range(p, 0.05, 0.4) * (1 - range(p, 0.72, 0.98)) * 0.92;
       stage.style.setProperty("--reel-dark", dark.toFixed(3));
 
       /* Flip the header to its dark state while the plate owns the screen.
