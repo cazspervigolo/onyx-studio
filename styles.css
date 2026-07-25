@@ -28,7 +28,7 @@
 :root {
   /* --- Surfaces: the room ------------------------------------------------ */
   --concrete:      #f4f4f2;   /* the floor and the walls */
-  --concrete-warm: #f7f7f5;   /* a band, one step down */
+  --concrete-warm: #f4f4f2;   /* same as the page — one colour, no step down */
   --leather:       #0e0f11;   /* the chairs */
 
   /* --- Ink: two, as the system demands ----------------------------------- */
