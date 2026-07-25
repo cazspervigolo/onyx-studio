@@ -45,11 +45,17 @@ address, map link, hours, Instagram, rating and review count. Change it there
 and the whole page updates, including the hours table, the "open until…" line
 under the hero, and the live Open / Closed badge in the header.
 
-**One line to check before this goes anywhere:** `transport` in `config.js`.
-Melbourne's top-rated barbers all give a "how to get here" note and it helps
-bookings, but a wrong walking time is worse than none — so the default names
-streets rather than guessing distances. Replace it with whatever you'd tell a
-client on the phone, or set it to `""` to hide the line.
+**Two lines to check before this goes anywhere:** `locationNote` and
+`transport` in `config.js`. Melbourne's top-rated barbers all tell people how
+to find the door and how to get there, and it helps bookings — but a wrong
+detail is worse than none, so the defaults say only what can be read off the
+address itself. Replace them with what you'd tell a client on the phone (which
+floor, lift or stairs, which cross-streets, which tram), or set either to `""`
+to hide that line.
+
+An earlier draft of this site asserted "up the stairs" and "in the heart of the
+CBD between Elizabeth and Queen". Neither was ever confirmed by the studio, so
+both have been removed rather than left on the page looking authoritative.
 
 Two things are *not* in `config.js`:
 

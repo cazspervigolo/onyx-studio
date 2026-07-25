@@ -28,12 +28,18 @@ const SITE = {
   addressLine2: "Melbourne VIC 3000",
   mapsUrl: "https://maps.app.goo.gl/zm2etbhuZQbDkgJt7",
 
-  // ⚠️ CHECK THIS ONE LINE. Melbourne's top-rated barbers all give a "how to
-  // get here" note and it measurably helps bookings — but a wrong walking
-  // time is worse than none, so this deliberately names streets rather than
-  // guessing distances. Replace it with whatever you'd actually tell a client
-  // on the phone. Leave it empty ("") to hide the line entirely.
-  transport: "Trams run along Elizabeth Street and Bourke Street, both a block away.",
+  // ⚠️ THE TWO LINES TO CHECK. Melbourne's top-rated barbers all tell people
+  // how to find the door and how to get there, and it helps bookings — but a
+  // wrong detail is worse than none, so these say only what can be read off
+  // the address itself. Replace them with what you'd actually tell a client on
+  // the phone (which floor, lift or stairs, which cross-streets, which tram).
+  // Set either to "" to hide that line completely.
+  //
+  // An earlier draft of this site asserted "up the stairs" and "between
+  // Elizabeth and Queen". Neither was ever confirmed by the studio, so both
+  // have been removed rather than left on the page looking authoritative.
+  locationNote: "The studio is on Level 1 — look for the entrance on Little Bourke Street.",
+  transport: "Bourke Street trams run one block north.",
 
   // --- Hours --------------------------------------------------------------
   // Format: ["Day", "9am – 6pm"] · write "Closed" for a closed day.
