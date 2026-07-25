@@ -196,12 +196,16 @@
     }
   });
 
-  // The "how to get here" line, hidden unless config.js provides one.
-  $('[data-bind="transport"]').forEach(function (el) {
-    if (SITE.transport) {
-      el.textContent = SITE.transport;
+  /* The "which door" and "how to get here" lines. Both hidden unless
+     config.js supplies them, so an unconfirmed detail is never invented into
+     existence — an empty string removes the line rather than leaving a
+     plausible-sounding guess on the page. */
+  [["locationNote", SITE.locationNote], ["transport", SITE.transport]].forEach(function (pair) {
+    $('[data-bind="' + pair[0] + '"]').forEach(function (el) {
+      if (!pair[1]) return;
+      el.textContent = pair[1];
       el.hidden = false;
-    }
+    });
   });
 
   $("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
