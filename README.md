@@ -10,7 +10,7 @@ site/
 ├── styles.css        the look (rarely needs changing)
 ├── script.js         wiring: binds config.js, hours, menu, reveals
 ├── motion.js         the film: light-field canvas + scroll engine
-├── fonts/            Inter Variable, self-hosted (SIL Open Font License)
+├── fonts/            Archivo Variable, self-hosted (SIL Open Font License)
 ├── images/           the shop's own photos, video and icons
 ├── robots.txt        ⚠️ currently blocks search engines — see below
 ├── sitemap.xml
