@@ -45,6 +45,12 @@ address, map link, hours, Instagram, rating and review count. Change it there
 and the whole page updates, including the hours table, the "open until…" line
 under the hero, and the live Open / Closed badge in the header.
 
+**One line to check before this goes anywhere:** `transport` in `config.js`.
+Melbourne's top-rated barbers all give a "how to get here" note and it helps
+bookings, but a wrong walking time is worse than none — so the default names
+streets rather than guessing distances. Replace it with whatever you'd tell a
+client on the phone, or set it to `""` to hide the line.
+
 Two things are *not* in `config.js`:
 
 - **Services and prices** — in `index.html`, in the `services` section.
@@ -67,8 +73,17 @@ rationed to two events and nothing else:
 - **Green** (`#2f6b43`) — the live Open badge, and only that.
 - **Amber** (`#e8a33d`) — the warmth in the canvas light-field, and only that.
 
-Type is Inter Variable at weight **450**, self-hosted so nothing is requested
-from a third party. Geometry is pills and big radii, with no borders.
+Type is Archivo Variable at weight **450**, self-hosted so nothing is
+requested from a third party. Archivo was chosen over the obvious Inter for
+two reasons: Inter is the default face of most of what's been built in the
+last three years, and Archivo — a newsprint and signage grotesque — happens
+to sit much closer to the Onyx wordmark, which is itself a heavy geometric
+grotesque. Geometry is pills and big radii, with no borders.
+
+There are deliberately no small tracked-uppercase labels above the section
+headings, and no 01 / 02 / 03 markers. Both are the most over-used furniture
+on the web right now, and every one of them was restating the heading
+underneath it.
 
 The page is a scroll-driven sequence: a light-and-dust hero, a pinned video
 that expands to fill the screen and contracts again, a word-by-word statement,
@@ -91,8 +106,12 @@ Measured on 25 July 2026, mobile Lighthouse, served locally:
 | Accessibility | 100 |
 | Best Practices | 100 |
 | SEO | 69 as shipped — 100 with the `noindex` removed (verified on a copy) |
-| First-paint payload | 236 KB · 732 KB once the video loads |
+| First-paint payload | 202 KB · 698 KB once the video loads |
 | Third-party requests | none |
+
+Two claims on the page are computed rather than typed, so they cannot go
+stale: the live Open / Closed badge, and "Open 7 days". Set any day to
+`"Closed"` in `config.js` and the "Open 7 days" line removes itself.
 
 The hero video is 640×360 — the only footage the studio has. It carries a
 grain overlay and a light grade, which is how a soft plate is carried at size.

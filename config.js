@@ -28,6 +28,13 @@ const SITE = {
   addressLine2: "Melbourne VIC 3000",
   mapsUrl: "https://maps.app.goo.gl/zm2etbhuZQbDkgJt7",
 
+  // ⚠️ CHECK THIS ONE LINE. Melbourne's top-rated barbers all give a "how to
+  // get here" note and it measurably helps bookings — but a wrong walking
+  // time is worse than none, so this deliberately names streets rather than
+  // guessing distances. Replace it with whatever you'd actually tell a client
+  // on the phone. Leave it empty ("") to hide the line entirely.
+  transport: "Trams run along Elizabeth Street and Bourke Street, both a block away.",
+
   // --- Hours --------------------------------------------------------------
   // Format: ["Day", "9am – 6pm"] · write "Closed" for a closed day.
   // These drive the hours table, the "open today" line, and the live
